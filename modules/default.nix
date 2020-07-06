@@ -13,7 +13,7 @@ in {
     ./media
     ./services
     ./shell
-    ./bootAnimation
+    ./boot
     ./themes
   ];
 

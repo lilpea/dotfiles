@@ -13,18 +13,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/856e5d24-0b94-4472-96ef-39dfbc91be13";
-      fsType = "ext4";
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/06ED-B656";
-      fsType = "vfat";
-    };
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/319d990f-ce38-4711-af3a-ddd4bbeeec9e"; }
+    [ { device = "/dev/disk/by-uuid/1a1fbc96-e80e-4560-9dd2-31b701680a69"; }
     ];
 
   nix.maxJobs = lib.mkDefault 4;

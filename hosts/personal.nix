@@ -12,7 +12,18 @@
   # Nothing in /tmp should survive a reboot
   boot.tmpOnTmpfs = true;
   # Use simple bootloader; I prefer the on-demand BIOs boot menu
-  # FIXME have a default bootloader
+  boot.loader = {
+    timeout = 1;
+    efi.canTouchEfiVariables = true;
+    systemd-boot = {
+      enable = true;
+      # Fix a security hole in place for backwards compatability. See dec in
+      # nixpkgs/noixos/modules/system/boot/loader/systemd-boot/systemd-boot.nix
+      editor = false;
+      # Limit number of generations to display in boot menu
+      configurationLimit = 10;
+    };
+  };
 
   ### Universal defaults
   # FIXME see how the hell this works

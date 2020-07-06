@@ -1,7 +1,11 @@
 # osm -- ajutine maja
 
 { pkgs, options, config, lib, ... }: {
-  imports = [ ./boot.nix ./hardware-configuration.nix ];
+  imports = [
+              # ./boot.nix
+              hardware-configuration.nix
+              ../personal.nix
+            ];
 
   modules = {
     desktop = {
@@ -106,7 +110,7 @@
   };
   services.dbus.packages = [ pkgs.blueman ];
   programs.ssh.startAgent = true;
-  networking.wireless.enable = true;
+  # networking.wireless.enable = true;
   hardware.opengl.enable = true;
 
   ## Fix screen tearing
