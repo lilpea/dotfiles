@@ -1,9 +1,6 @@
 { config, options, lib, pkgs, ... }:
 with lib;
 {
-  imports = [
-    ./common.nix
-  ];
 
   options.modules.desktop.bspwm = {
     enable = mkOption { type = types.bool; default = false; };
@@ -25,7 +22,7 @@ with lib;
       redshift.enable = true;
       xserver = {
         enable = true;
-        displayManager.defaultSession = "none+bspwm";
+        # displayManager.defaultSession = "none+bspwm";
         displayManager.lightdm.enable = true;
         displayManager.lightdm.greeters.mini.enable = true;
         windowManager.bspwm.enable = true;

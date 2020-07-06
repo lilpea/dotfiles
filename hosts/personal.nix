@@ -12,28 +12,18 @@
   # Nothing in /tmp should survive a reboot
   boot.tmpOnTmpfs = true;
   # Use simple bootloader; I prefer the on-demand BIOs boot menu
-  boot.loader = {
-    timeout = 1;
-    efi.canTouchEfiVariables = true;
-    systemd-boot = {
-      enable = true;
-      # Fix a security hole in place for backwards compatibility. See desc in
-      # nixpkgs/nixos/modules/system/boot/loader/systemd-boot/systemd-boot.nix
-      editor = false;
-      # Limit number of generations to display in boot menu
-      configurationLimit = 10;
-    };
-  };
+  # FIXME have a default bootloader
 
   ### Universal defaults
-  networking.firewall.enable = true;
-  networking.hosts = {
-    "192.168.1.2"  = [ "ao" ];
-    "192.168.1.3"  = [ "aka" ];
-    "192.168.1.10" = [ "kuro" ];
-    "192.168.1.11" = [ "shiro" ];
-    "192.168.1.12" = [ "midori" ];
-  };
+  # FIXME see how the hell this works
+  # networking.firewall.enable = true;
+  # networking.hosts = {
+  #   "192.168.1.2"  = [ "ao" ];
+  #   "192.168.1.3"  = [ "aka" ];
+  #   "192.168.1.10" = [ "kuro" ];
+  #   "192.168.1.11" = [ "shiro" ];
+  #   "192.168.1.12" = [ "midori" ];
+  # };
 
 
   ### A tidy $HOME is a tidy mind

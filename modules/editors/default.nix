@@ -9,7 +9,7 @@ with lib;
   options.modules.editors = {
     default = mkOption {
       type = types.str;
-      default = "vi";
+      default = "nvim";
     };
   };
 

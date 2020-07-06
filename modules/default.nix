@@ -13,14 +13,15 @@ in {
     ./media
     ./services
     ./shell
+    ./bootAnimation
     ./themes
   ];
 
   options = {
     my = {
       ## Personal details
-      username = mkOptionStr "hlissner";
-      email = mkOptionStr "henrik@lissner.net";
+      username = mkOptionStr "ekke";
+      email = mkOptionStr "ekket@protonmail.ch";
 
       ## Convenience aliases
       home = mkOption { type = options.home-manager.users.type.functor.wrapped; };

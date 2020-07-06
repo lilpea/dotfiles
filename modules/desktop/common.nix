@@ -1,4 +1,5 @@
 { config, lib, pkgs, ... }:
+
 {
   my.packages = with pkgs; [
     # I often need a thumbnail browser to show off, peruse or organize photos,
@@ -31,24 +32,37 @@
     enableFontDir = true;
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
-      ubuntu_font_family
+      corefonts
       dejavu_fonts
+      fantasque-sans-mono
+      fira
       fira-code
       fira-code-symbols
-      symbola
+      font-awesome-ttf
+      ibm-plex
+      iosevka
       noto-fonts
       noto-fonts-cjk
-      font-awesome-ttf
+      powerline-fonts
+      roboto
+      roboto-mono
+      roboto-slab
       siji
+      source-code-pro
+      symbola
+      tewi-font
+      ubuntu_font_family
     ];
     fontconfig.defaultFonts = {
-      sansSerif = ["Ubuntu"];
-      monospace = ["Fira Code"];
+      monospace = [ "Iosevka" ];
+      sansSerif = [ "Fira Sans" ];
+      serif = [ "IBM Plex Serif" ];
     };
   };
 
   ## Apps/Services
   # For redshift
+  # FIXME
   location = (if config.time.timeZone == "America/Toronto" then {
     latitude = 43.70011;
     longitude = -79.4163;

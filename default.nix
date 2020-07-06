@@ -29,11 +29,10 @@ device: username:
 
   # Add custom packages & unstable channel, so they can be accessed via pkgs.*
   nixpkgs.overlays = import ./packages;
-  nixpkgs.config.allowUnfree = true;  # forgive me Stallman senpai
+  nixpkgs.config.allowUnfree = true;
 
   # These are the things I want installed on all my systems
   environment.systemPackages = with pkgs; [
-    # Just the bear necessities~
     coreutils
     git
     killall

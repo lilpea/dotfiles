@@ -1,5 +1,5 @@
-USER := hlissner
-HOST := kuro
+USER := ekke
+HOST := osm
 HOME := /home/$(USER)
 
 NIXOS_VERSION := 20.03

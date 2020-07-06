@@ -4,6 +4,6 @@
   imports = [
     ./mpv.nix
     # ./ncmpcpp.nix
-    ./spotify.nix
+    # ./spotify.nix
   ];
 }
