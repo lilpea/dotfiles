@@ -1,6 +1,7 @@
 USER := ekke
 HOST := osm
 HOME := /home/$(USER)
+PREFIX := /mnt
 
 NIXOS_VERSION := 20.03
 NIXOS_PREFIX  := $(PREFIX)/etc/nixos
@@ -65,8 +66,8 @@ $(HOME)/.dotfiles:
 	@mkdir -p $(HOME)
 	@[ -e $(HOME)/.dotfiles ] || sudo mv /etc/dotfiles $(HOME)/.dotfiles
 	@[ -e /etc/dotfiles ] || sudo ln -s $(HOME)/.dotfiles /etc/dotfiles
-	@chown $(USER):users $(HOME) $(HOME)/.dotfiles
 
+# @chown $(USER):users $(HOME) $(HOME)/.dotfiles
 # Convenience aliases
 i: install
 s: switch
