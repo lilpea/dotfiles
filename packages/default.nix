@@ -8,7 +8,7 @@
             https://github.com/xzfc/cached-nix-shell/archive/master.tar.gz) {});
       linode-cli = (callPackage ./linode-cli.nix {});
       ripcord = (callPackage ./ripcord.nix {});
-      zunit = (callPackage ./zunit.nix {});
+      # zunit = (callPackage ./zunit.nix {}); FIXME
     };
 
     nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
@@ -17,7 +17,7 @@
 
     # Occasionally, "stable" packages are broken or incomplete, so access to the
     # bleeding edge is necessary, as a last resort.
-    unstable = import <nixos-unstable> { inherit config; };
+    unstable = import <nixpkgs-unstable> { inherit config; };
   })
 
   # emacsGit

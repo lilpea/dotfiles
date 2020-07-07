@@ -63,13 +63,13 @@
   ## Apps/Services
   # For redshift
   # FIXME
-  location = (if config.time.timeZone == "America/Toronto" then {
-    latitude = 43.70011;
-    longitude = -79.4163;
-  } else if config.time.timeZone == "Europe/Copenhagen" then {
-    latitude = 55.88;
-    longitude = 12.5;
-  } else {});
+  #location = (if config.time.timeZone == "America/Toronto" then {
+  #  latitude = 43.70011;
+  #  longitude = -79.4163;
+  #} else if config.time.timeZone == "Europe/Copenhagen" then {
+  #  latitude = 55.88;
+  #  longitude = 12.5;
+  #} else {});
 
   services.xserver = {
     displayManager.lightdm.greeters.mini.user = config.my.username;

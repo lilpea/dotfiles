@@ -19,7 +19,7 @@ with lib;
 
     services = {
       picom.enable = true;
-      redshift.enable = true;
+      # redshift.enable = true; FIXME use proper latitude value
       xserver = {
         enable = true;
         # displayManager.defaultSession = "none+bspwm";

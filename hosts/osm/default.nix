@@ -3,7 +3,7 @@
 { pkgs, options, config, lib, ... }: {
   imports = [
               # ./boot.nix
-              hardware-configuration.nix
+              ./hardware-configuration.nix
               ../personal.nix
             ];
 
@@ -11,7 +11,6 @@
     desktop = {
       bspwm.enable = true;
       xmonad.enable = true;
-      sway.enable = false;
 
       # apps.discord.enable = true;
       # apps.skype.enable = true;
@@ -21,11 +20,6 @@
       apps.recording.enable = true;  # recording screen/audio
       apps.rofi.enable = true;
       apps.zathura.enable = true;
-      apps.dunst.enable = true;
-
-      term.default = "alacritty";
-      term.alacritty.enable = true;
-      term.st.enable = true;
 
       browsers.default = "qutebrowser";
       browsers.firefox.enable = true;
@@ -35,11 +29,13 @@
 
       term = {
         st.enable = true;
+        alacritty.enable = true;
         default = "alacritty";
       };
 
-      gaming.emulators.psx.enable = true;
-      gaming.steam.enable = true;
+      # gaming.emulators.psx.enable = false; # FIXME called insecure by nixpkgs
+      # gaming.emulators.snes.enable = true;
+      # gaming.steam.enable = true;
     };
 
     editors = {
@@ -64,9 +60,9 @@
     };
 
     media = {
-      spotify.enable = false;
+      # spotify.enable = false;
       mpv.enable = true;
-      ncmpcpp.enable = true;
+      # ncmpcpp.enable = true; FIXME
     };
 
     shell = {
@@ -80,9 +76,10 @@
       zsh.enable = true;
     };
 
+    # FIXME see if any of these are worth using
     services = {
-      ssh.enable = true;
-      syncthing.enable = true;
+      #ssh.enable = true;
+      #syncthing.enable = true;
       # gitea.enable = true;
       # nginx.enable = true;
       # calibre.enable = true;

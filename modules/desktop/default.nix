@@ -6,6 +6,7 @@
     # ./stumpwm.nix
     ./bspwm.nix
     ./xmonad.nix
+    # ./dunst.nix
 
     ./apps
     ./term

@@ -18,7 +18,7 @@ with lib;
   config = mkIf config.modules.dev.zsh.enable {
     my.packages = with pkgs; [
       shellcheck
-      my.zunit
+      #my.zunit
     ];
   };
 }

@@ -38,7 +38,8 @@ with lib;
       '';
     };
 
-    fonts.fonts = [ pkgs.nerdfonts ];
+    # fonts.fonts = [ pkgs.nerdfonts ];
+    # FIXME appears to be not building, cf. themes/flouorescence
     my.packages = with pkgs; [
       nordic
       paper-icon-theme # for rofi

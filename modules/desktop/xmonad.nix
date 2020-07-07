@@ -7,15 +7,17 @@ with lib; {
   };
 
   config = mkIf config.modules.desktop.xmonad.enable {
-    modules.desktop.WM.enable = true;
+    environment.systemPackages = with pkgs.unstable.haskellPackages; [
+      xmonad-contrib
+      xmonad-extras
+      xmonad
+      gloss
+    ];
+
+    # FIXME what is this for?
+    # modules.desktop.WM.enable = true;
     services.xserver.windowManager.xmonad = {
       enable = true;
-      extraPackages = with pkgs.unstable.haskellPackages; [
-        xmonad-contrib
-        xmonad-extras
-        xmonad
-        gloss
-      ];
     };
 
     services = {
@@ -39,7 +41,7 @@ with lib; {
 
     my.env.PATH = [ <config/xmonad/scripts/xmobar> "$PATH" ];
 
-    modules.desktop.term.alacritty.enable = true;
-    modules.desktop.term.default = "alacritty";
+    # modules.desktop.term.alacritty.enable = true;
+    # modules.desktop.term.default = "alacritty";
   };
 }

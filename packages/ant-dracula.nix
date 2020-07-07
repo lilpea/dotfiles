@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/EliverLara/Ant-Dracula/releases/download/v${version}/Ant-Dracula.tar";
-    sha256 = "00b8w69xapqy8kc7zqwlfz1xpld6hibbh35djvhcnd905gzzymkd";
+    sha256 = "6d56ffff2b2035cbe096ad0cb85684a6d1dbc37794e37fd8441e5fd593e16801";
   };
 
   propagatedUserEnvPkgs = [
@@ -23,9 +23,9 @@ stdenv.mkDerivation rec {
     runHook postInstall
   '';
 
-  outputHashAlgo = "sha256";
-  outputHashMode = "recursive";
-  outputHash = "1ns00y1haxm20jak26gjv53yisaw9vsr2dbsgj10zz65rglr1h18";
+  #outputHashAlgo = "sha256";
+  #outputHashMode = "recursive";
+  #outputHash =   "1ns00y1haxm20jak26gjv53yisaw9vsr2dbsgj10zz65rglr1h18"; #"006ffkfkcbir0lyj4n4p5hrar3f176yamc9gfbjifrq0aksjwj";
 
   meta = with stdenv.lib; {
     description = "A flat and light theme with a modern look";
