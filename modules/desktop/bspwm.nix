@@ -24,7 +24,7 @@ with lib;
         enable = true;
         # displayManager.defaultSession = "none+bspwm";
         displayManager.lightdm.enable = true;
-        displayManager.lightdm.greeters.mini.enable = true;
+        # displayManager.lightdm.greeters.mini.enable = true; FIXME
         windowManager.bspwm.enable = true;
       };
     };
